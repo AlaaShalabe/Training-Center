@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'category_id',
+        'maximum',
+        'minimum',
+        'image'
+
+    ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
